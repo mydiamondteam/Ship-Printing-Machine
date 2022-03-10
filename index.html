@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:locale" content="en-US">
+  <meta name="og:site_name" content="SHIP Printing Machine">
+  <meta name="og:title" content="SHIP Printing Machine">
+  <meta name="og:description" content="SHIP Printing Machine">
+
+  <title>SHIP Printing Machine</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style1.css">
+  <link rel="stylesheet" href="assets/css/styleNew.css">
+
+  <link rel="stylesheet" href="assets/css/iziToast.min.css">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.html" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+
+</head>
+
+<body>
+
+    <!-- Video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="./assets/img/Space.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header -->
+  <div class="bg"></div>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <table width="100%" border="0" cellspacing="10" cellpadding="10">
+          <tbody>
+            <tr>
+              <td align="center">
+              <button class="header__btn" href="https://spacefield.spaceprojects.online/">SpaceField
+              </button>
+              <button  class="header__btn" href="https://dao.spaceprojects.online/stake">SpaceDao
+              </button>
+              <button  class="header__btn" href="https://t.me/SpaceDaoDapp">Telegram
+              </button>
+              <button  class="header__btn" href="https://twitter.com/spacemoney9">Twitter
+              </button>
+              <button  class="header__btn" href="https://discord.com/invite/SXZXFtWZFH">Discord
+              </button>
+              <button  class="header__btn" href="">Verified contract
+              </button>
+              </td>
+              <td align="right">    
+                <button class="header__btn" id="connect-btn" onclick="Connect()">CONNECT</button>
+              </td>
+            </tr>
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </header>
+    <main class="main">
+        <div class="container">
+			<div id="launch-time">
+		    </div>	
+			      <main class="main text-white">
+            <div class="container">
+	        <div class="main__inner">             
+				<div class="main__inner-body">       
+					<div class="main__plan-item-i">	
+             <div class="main__body-plan main">
+                <h2 class="main__plan-title-i">
+                   SHIP Printing Machine STATISTICS
+								<span>Stake <strong class="busd" style="color: #f4c444;">SPACE </strong> and earn daily staking rewards</span>
+								<span>Stake <strong class="busd" style="color: #f4c444;">SHIPS </strong> and earn daily staking rewards</span>
+							</h2><br>
+						<div class="row clearfix">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<h6 class="align-center" style="color: #ffffff">
+                    SHIPS PRICE
+                  </h6>
+								   <div class="align-center">
+                    <h2 style="color: #f4c444">
+                      <span id="token-priceM">0.00 USD</span>
+                    </h2>
+									</div>										
+								</div><br><br><br><br>
+								<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+									<h6 class="align-center" style="color: #ffffff">
+                    Total Supply
+                  </h6>
+									<div class="align-center">
+                     <h2 style="color: #f4c444">
+                       <span id="limit-supply">...</span>
+                      </h2>
+									</div>										
+								</div>  
+								<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+									<h6 class="align-center" style="color: #ffffff">
+                   Circulating Supply
+                  </h6>
+									<div class="align-center">
+                    <h2 style="color: #f4c444">
+                      <span id="total-supply">...</span>
+                    </h2 >
+									</div>										
+								</div>								      
+								<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+									<h6 class="align-center" style="color: #ffffff">
+                    Available Supply
+                  </h6>
+									<div class="align-center">
+                   <h2 style="color: #f4c444">
+                     <span id="available-supply">...</span>
+                  </h2>
+									</div>										
+								</div><br><br><br>	                  						
+							</div>								
+						</div>
+					</div>
+          <div class="main__plan-item">
+            <div class="main__body-plan">
+              <h2 class="main__plan-title-i">
+                MINT $SHIPS
+                <span>Mint <strong class="busd" style="color: #f4c444;">SHIPS </strong> by staking your <strong class="busd" style="color: #f4c444;">SPACE </strong></span>
+                <span>You can stake as many times as you want</span>
+                <span>You cannot unstake your <strong class="busd" style="color: #f4c444;">SPACE </strong></span>
+              </h2><br>
+              <div class="info__plan-box">
+                <div class="main__plan-txt" id="APY_M">
+                  APR<span>...</span>
+                </div>
+              <div class="main__plan-txt" id="user-BUSD-staked">
+                  My Stake<span>...</span>
+                </div>
+                  <div class="main__plan-txt" id="total-BUSD-staked">
+                    Total Staked<span>...</span>
+                 </div>
+               </div><br><br><br><br><br><br><br>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="main__plan-txt">$SHIPS Minted</div>
+                    </td>
+                    <td rowspan="2" align="right" valign="middle"><button class="main__claim-btn"
+                     id="claimM">CLAIM</button></td>
+                  </tr>
+                   <tr>
+                     <td>
+                      <div class="main__plan-txt"><span id="user-unClaimed-M">0.00</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table><br>
+
+              <!-- ---------------- -->
+
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444">
+                      Approve <strong class="busd" style="color: #f4c444;">$SPACE </strong> spend
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+               <div class="input-group">
+                 <input type="number" min="10" step="10" class="form-control" placeholder="Enter Amount"
+                  id="input-approve">
+               <div class="input-group-append">
+                 <div class="st-container">
+                   <span><button class="main__plan-btn" onclick="approveBUSD()">APPROVE</button></span>
+                 </div>
+                </div>
+              </div>
+
+              <!-- ---------------- -->
+
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444">
+                      No Minimum Amount
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="input-group">
+                <input type="number" min="10" step="10" class="form-control" placeholder="Enter Amount" id="input-busd">
+                <div class="input-group-append">
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="SetMaxBUSD()">MAX</button></span>
+                  </div>
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="stakeM()">STAKE</button></span>
+                  </div>
+                </div>
+              </div>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444">
+                      Wallet Balance: <span id="user-BUSD-balance-1">...</span> <strong class="busd" style="color: #f4c444;">$SPACE </strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- ---------------- -->
+
+            </div>
+          </div>
+          <div class="main__plan-item">
+            <div class="main__body-plan">
+              <h2 class="main__plan-title-i">
+                STAKE $SHIPS
+                <span>Stake <strong class="busd" style="color: #f4c444;">SHIPS </strong> to earn more <strong class="busd" style="color: #f4c444;">SHIPS </strong></span>
+                <span>You can stake as many times as you want</span>
+                <span>You can unstake your <strong class="busd" style="color: #f4c444;">SHIPS </strong> after 7 days</span>
+              </h2><br>
+              <div class="info__plan-box">
+                <div class="main__plan-txt" id="APY_T">
+                  APR<span>...</span>
+                </div>
+                <div class="main__plan-txt" id="user-token-staked">
+                  My Stake<span>...</span>
+                </div>
+                <div class="main__plan-txt" id="total-token-staked">
+                  Total Staked<span>...</span>
+                </div>
+              </div><br><br><br><br><br>
+
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="main__total-number-i" id="time-tounstake"></div>
+                    </td>
+                    <td align="right"><button class="main__unstake-btn" id="unstake">UNSTAKE</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="main__plan-txt">$SHIPS Earned</div>
+                    </td>
+                  <td rowspan="2" align="right" valign="middle"><button class="main__claim-btn"
+                    id="claimT">CLAIM</button></td>
+                  </tr>
+                   <tr>
+                    <td>
+                      <div class="main__plan-txt"><span id="user-unClaimed-T">0.00</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table><br>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444;">
+                      There is no minimum to stake
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="input-group">
+                <input type="number" min="10" step="10" class="form-control" placeholder="Enter Amount" id="input-2">
+                <div class="input-group-append">
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="SetMaxSUPERAPE()">MAX</button></span>
+                  </div>
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="stakeT('#input-2')">STAKE</button></span>
+                  </div>
+                </div>
+              </div>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444;">
+                      Wallet Balance: <span id="user-token-balance-1">...</span> <strong>$SHIPS </strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+		        <div class="main__plan-item">
+              <div class="main__body-plan">
+               <h2 class="main__plan-title-a">
+								CLAIM AIRDROP
+								<span>Complete the Weekly Quest</span>
+								<span>to receive 100 <strong class="busd" style="color: #f4c444;">SHIPS </strong> Airdrop</span>
+							</h2>
+							<div class="info__plan-box" style="padding-top: 10px; margin-top: 22px;">
+							   <div class="main__plan-txt" id="airdrop-c-1">
+                   Active Stake of atleast ...<strong>$SPACE </strong><span>❌</span>
+                  </div>
+							   <div class="main__plan-txt" id="airdrop-c-2">
+                   7 days since the last claim<span >❌</span>
+                 </div>	
+							  <div class="main__plan-txt" id="airdrop-c-3">
+                   Atleast 5 Direct Referrals<span>❌</span>
+                 </div>								
+							 </div><br><br><br><br>	
+							
+							<table width="100%">
+							  <tbody>
+							    <tr>
+								   <td align="center"><div class="main__total-txt">Global Airdrop Available</div></td>
+							    </tr>
+ 							  <tr>
+							    <td align="center"><div class="main__total-number" id="available-airdrop">0.00</div></td>
+							  </tr><br><br><br><br><br>
+ 							    <tr>
+							      <td align="center"><button class="main__claim-btn" style="margin-top: 22px;" id="">CLAIM</button></td>
+							    </tr> 								  
+							  </tbody>
+							</table><br>							
+				
+						</div>
+					</div>		
+          <div class="main__plan-item">
+            <div class="main__body-plan">
+              <h2 class="main__plan-title-s">
+                SELL $SHIPS
+                <span>Sell the earned tokens</span>
+                <span>Only 40000 tokens can be sold per day</span>
+                <span>Earn <strong class="busd" style="color: #f4c444;">SPACE </strong></span>
+              </h2><br>
+              <div class="info__plan-box">
+                <div class="main__plan-txt" id="total-sold-today">
+                  Sold Today<span>...</span>
+                </div>
+                <div class="main__plan-txt" id="available-to-sell">
+                  Available Today<span>...</span>
+                </div>
+                <div class="main__plan-txt" id="time-tonextday">
+                  Reset in<span>...</span>
+                </div>
+              </div><br><br><br><br><br><br>
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td align="center">
+                      <div class="main__total-txt">$SHIPS PRICE</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <div class="main__total-number" id="token-price">0.00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <div class="main__total-number-i" id=""><strong>$SPACE </strong></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table><br>
+              <div class="main__plan-txt">
+                You will get<h3 id="sell-calc">0.00 <strong>$SPACE </strong></h3>
+              </div>
+
+              <div class="input-group">
+                <input type="number" min="10" step="10" class="form-control" placeholder="Enter Amount" id="input-3">
+                <div class="input-group-append">
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="SetMaxSUPERAPEToSell()">MAX</button></span>
+                  </div>
+                  <div class="st-container">
+                    <span><button class="main__plan-btn" onclick="sell('#input-3')">SELL</button></span>
+                  </div>
+                </div>
+              </div>
+              <table width="100%" border="0">
+                <tbody>
+                  <tr>
+                    <td align="center" style="color: #f4c444;">
+                      Wallet Balance: <span id="user-token-balance-2">...</span> <strong>$SPACE </strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="main__inner-body">
+          <div class="main__plan-item-i">
+            <div class="main__body-plan">
+             <div class="main__game">
+              <h2 class="main__game-title">QUICK GUIDE</h2>
+              <b><strong class="busd" style="color: #f4c444;">SHIPS </strong> Printing Machine Token - ( Coming Soon ) </b><br>
+              <b>Official Launching Date: ( Coming soon )</b><br><br>
+              The value of <strong class="busd" style="color: #f4c444;">SHIPS </strong> will rise as more users invest <strong class="busd" style="color: #f4c444;">SPACE </strong>.<br><br>
+              1. Stake <strong class="busd" style="color: #f4c444;">SPACE </strong> and earn Daily Staking Rewards in 
+              <strong class="busd" style="color: #f4c444;">SHIPS </strong> 
+              token (4% per day).You can claim your 
+              <strong class="busd" style="color: #f4c444;">SHIPS </strong> 
+              rewards anytime. You cannot unstake your staked <strong class="busd" style="color: #f4c444;">SPACE </strong>.<br>
+              •You will earn <strong class="busd" style="color: #f4c444;">SHIPS </strong> tokens as a percentage of SPACE invested irrespective of the <strong class="busd" style="color: #f4c444;">SHIPS </strong> Price.<br>
+              •i.e. If you invest 100 <strong class="busd" style="color: #f4c444;">SPACE </strong> you will receive 4 <strong class="busd" style="color: #f4c444;">SHIPS </strong> daily.
+              •You have two options with your <strong class="busd" style="color: #f4c444;">SHIPS </strong> tokens, you can sell them for <strong class="busd" style="color: #f4c444;">SPACE </strong>, or you can stake them to
+              earn more <strong class="busd" style="color: #f4c444;">SHIPS </strong> tokens (6% per day). <strong class="busd" style="color: #f4c444;">SHIPS </strong> staking is locked for 7 days <br><BR>
+			  
+              2. Terminology <br>
+				•Total Supply : The maximum amount of <strong class="busd" style="color: #f4c444;">SHIPS </strong> that can exist <br>
+				•Circulating Supply : The amount of <strong class="busd" style="color: #f4c444;">SHIPS </strong> tokens that are currently in wallets <br>
+				•Available Suppy : (Total Supply - Cirulating Supply) <br>
+				•<strong class="busd" style="color: #f4c444;">SHIPS </strong> Price : (Total <strong class="busd" style="color: #f4c444;">SPACE </strong> Balance / Available Supply) <br><br>
+              3. Mint <strong class="busd" style="color: #f4c444;">SHIPS </strong> - As you claim <strong class="busd" style="color: #f4c444;">SHIPS </strong> from minting, it is removed from the Available Supply and
+              added to the Circulating Supply <br><br>
+              4. Sell <strong class="busd" style="color: #f4c444;">SHIPS </strong> - As you sell <strong class="busd" style="color: #f4c444;">SHIPS </strong>, it is removed from the Circulating Supply and added to the
+              Available Supply <br>
+            </div> <br>
+            <div class="main__referral-link">
+
+              <div class="main__referral-header">
+                <label class="main__referral-label">
+                  YOUR REFERRAL LINK
+                  <input type="text" class="main__referral-input" value="..." id="ref-link">
+                </label>
+                <button class=" main__referral-btn" onclick="copyToClipboard('#ref-link')">COPY</button>
+              </div>
+              <div class="main__referral-body">
+                <div class="main__referral-col">
+                  <div class="main__referral-txt">
+                    Referral Earned Available
+                    <div class="main__referral-perc" id="referral-available">...</div>
+                  </div>
+                  <div class="main__referral-txt">
+                    Total Referral Earned
+                    <div class="main__referral-perc" id="referral-earned">...</div>
+                  </div>
+                  <div class="main__referral-txt">
+                    Total Referral Withdrawn
+                    <div class="main__referral-perc" id="referral-withdrawn">...</div>
+                  </div>
+                  <div class="main__referral-txt">
+                    Total Referrals
+                    <div class="main__referral-perc" id="total-referrals">...</div>
+                  </div>
+                </div>
+                <div class="main__referral-col">
+                  <div class="main__referral-txt">
+                    Earn <strong class="busd" style="color: #f4c444;">SPACE </strong> by inviting people to <strong class="busd" style="color: #f4c444;">SHIPS </strong> Printing Machine. <br><br>
+                    You will receive:<br><br>
+                    4% from each level 1 referral deposits<br>
+                    2% from each level 2 referral deposits<br>
+                    1% from each level 3 referral deposits<br><br>
+                    Deposit atleast once to activate Referral Rewards<br>
+                  </div>
+                </div>
+              </div><br><br><br>
+              <table width="100%" border="0">
+                <tbody>
+                  <tr>
+                    <td align="center"><button class="main__wref-btn" id="withdraw-referral-btn">WITHDRAW REFERRAL EARNINGS</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="main__footer-stake" id="user-deposits">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <table width="100%" border="0">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="preloader"><br><br>
+    <table width="100%" height="100%" border="1">
+      <tbody>
+        <tr>
+          <td align="center" valign="middle">
+            <img width="700px" height="600px" src="assets/img/logo.png" alt="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="assets/scripts/jquery.min.js"></script>
+  <script src="assets/scripts/main.js"></script>
+  <script src="assets/scripts/web3.min.js"></script>
+  <script src="assets/scripts/index_202201191455.js"></script>
+  <script src="assets/scripts/iziToast.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/timer/main.js"></script>
+	<script src="assets/timer/countdown.js"></script>
+	<script src="assets/timer/time.js"></script>
+
+</body>
+
+</html>
