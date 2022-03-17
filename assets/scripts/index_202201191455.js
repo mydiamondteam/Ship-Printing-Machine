@@ -294,7 +294,7 @@ async function runAPP(){
 				$("#available-to-sell").html(`Available Today<span>${(res/1e18).toFixed(2)}</span>`)
             })		
 
-            $("#ref-link").val('https://' + window.location.host  + '/MTR/?ref=' + currentAddr)
+            $("#ref-link").val('https://' + window.location.host  + '/?ref=' + currentAddr)
 
             contract.methods.getUserReferralBonus(currentAddr).call().then(res=>{
                 $("#referral-available").text((res/1e18).toFixed(2))
