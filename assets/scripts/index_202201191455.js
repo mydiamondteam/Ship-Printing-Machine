@@ -176,21 +176,21 @@ async function runAPP(){
             $("#connect-btn").text(connectedAddr)			
 			
             contract.methods.getTokenPrice().call().then(res=>{ 
-			 	TokenPrice = (res/1e18).toFixed(6)
+			 	TokenPrice = (res/1e18).toFixed(7)
 			 	$("#token-price").html(`${TokenPrice}`)
 			 	$("#token-priceM").html(`${TokenPrice}`)
              })	
 			
             contract.methods.totalSupply().call().then(res=>{
-                $("#total-supply").text((res/1e18).toFixed(2))			
+                $("#total-supply").text((res/1e18).toFixed(7))			
             })	
 			
             contract.methods.limitSupply().call().then(res=>{
-                $("#limit-supply").text((res/1e18).toFixed(2))			
+                $("#limit-supply").text((res/1e18).toFixed(7))			
             })	
 			
             contract.methods.availableSupply().call().then(res=>{
-                $("#available-supply").text((res/1e18).toFixed(2))			
+                $("#available-supply").text((res/1e18).toFixed(7))			
             })	
 			
             contract.methods.totalUsers().call().then(res=>{
@@ -206,7 +206,7 @@ async function runAPP(){
             })				
 			
             contract.methods.totalSpoLPStaked().call().then(res=>{                	
-				$("#total-BUSD-staked").html(`Total Staked<span>${(res/1e18).toFixed(2)} SPO LP</span>`)
+				$("#total-BUSD-staked").html(`Total Staked<span>${(res/1e18).toFixed(7)} SPO LP</span>`)
             })	
 
             contract.methods.totalUsers().call().then(res=>{                	
@@ -214,18 +214,18 @@ async function runAPP(){
             })				
 			
             contract.methods.totalTokenStaked().call().then(res=>{                	
-				$("#total-token-staked").html(`Total Staked<span>${(res/1e18).toFixed(2)} MTR</span>`)
+				$("#total-token-staked").html(`Total Staked<span>${(res/1e18).toFixed(7)} MTR</span>`)
             })	
 			
 		
 			// todo, change hardcoded address for variable
 			//tokenContract.methods.balanceOf('0xab08906867fcA09e9E39819411Df1355C918Da05').call().then(res => {
 			tokenContract.methods.balanceOf(CONTRACT_ADDRESS).call().then(res => {	
-				$("#contract-BUSD-balance").text((res/1e18).toFixed(2))
+				$("#contract-BUSD-balance").text((res/1e18).toFixed(7))
             })
 
 			tokenContract.methods.balanceOf(currentAddr).call().then(res => {
-				$("#user-BUSD-balance-1").text((res/1e18).toFixed(4))	
+				$("#user-BUSD-balance-1").text((res/1e18).toFixed(7))	
 
 			})
 
@@ -234,26 +234,26 @@ async function runAPP(){
             //})			
 			
             contract.methods.getContractTokenBalance().call().then(res=>{
-                $("#contract-token-balance").text((res/1e18).toFixed(2))
+                $("#contract-token-balance").text((res/1e18).toFixed(7))
             })
 			
             contract.methods.getAvailableAirdrop().call().then(res=>{
-                $("#available-airdrop").text((res/1e18).toFixed(0))
+                $("#available-airdrop").text((res/1e18).toFixed(7))
             })	
 			
             contract.methods.getUserTokenBalance(currentAddr).call().then(res=>{
-                $("#user-token-balance-1").text((res/1e18).toFixed(4))	
-				$("#user-token-balance-2").text((res/1e18).toFixed(4))
+                $("#user-token-balance-1").text((res/1e18).toFixed(7))	
+				$("#user-token-balance-2").text((res/1e18).toFixed(7))
             })
 			
             contract.methods.getUserSpoLPStaked(currentAddr).call().then(res=>{	
-				userBUSDStaked = (res/1e18).toFixed(2)
+				userBUSDStaked = (res/1e18).toFixed(7)
 				// console.log(userBUSDStaked)
 				$("#user-BUSD-staked").html(`My Stake<span>${userBUSDStaked} SPO-LP</span>`)
             })
 			
             contract.methods.getUserAirdropReqInv(currentAddr).call().then(res=>{	
-				userReqAirdropInv = (res/1e18).toFixed(2)
+				userReqAirdropInv = (res/1e18).toFixed(7)
 				//console.log(parseInt(userReqAirdropInv))
 				//console.log(parseInt(userBUSDStaked))
          		if ( parseInt(userReqAirdropInv) > parseInt(userBUSDStaked)) {
@@ -278,11 +278,11 @@ async function runAPP(){
             })				
 			
             contract.methods.getUserUnclaimedTokens_M(currentAddr).call().then(res=>{
-                $("#user-unClaimed-M").text((res/1e18).toFixed(4))			
+                $("#user-unClaimed-M").text((res/1e18).toFixed(7))			
             })				
 			
             contract.methods.getUserUnclaimedTokens_T(currentAddr).call().then(res=>{
-                $("#user-unClaimed-T").text((res/1e18).toFixed(4))			
+                $("#user-unClaimed-T").text((res/1e18).toFixed(7))			
             })
 			
 			contract.methods.getTokenSoldToday().call().then(res=>{                	
@@ -297,15 +297,15 @@ async function runAPP(){
             $("#ref-link").val('https://' + window.location.host  + '/?ref=' + currentAddr)
 
             contract.methods.getUserReferralBonus(currentAddr).call().then(res=>{
-                $("#referral-available").text((res/1e18).toFixed(2))
+                $("#referral-available").text((res/1e18).toFixed(7))
             })           
 			
 			contract.methods.getUserReferralTotalBonus(currentAddr).call().then(res=>{
-                $("#referral-earned").text((res/1e18).toFixed(2))
+                $("#referral-earned").text((res/1e18).toFixed(7))
             })
 
             contract.methods.getUserReferralWithdrawn(currentAddr).call().then(res=>{
-                $("#referral-withdrawn").text((res/1e18).toFixed(2))
+                $("#referral-withdrawn").text((res/1e18).toFixed(7))
             })
 
             contract.methods.getUserDownlineCount(currentAddr).call().then(res=>{                
@@ -410,7 +410,7 @@ function SetMaxBUSDMachineToSell() {
 	contract.methods.getUserTokenBalance(currentAddr).call().then(res=>{
 		
 		amt = web3.utils.fromWei(res);	
-		inputF.value = parseFloat(amt).toFixed(3) - 0.001;
+		inputF.value = parseFloat(amt).toFixed(7) - 0.001;
 	})	
 }
 
@@ -551,6 +551,6 @@ $("#input-3").on('input',()=>{
 	
     if(contract){
         var profit = (amount * TokenPrice)
-		$("#sell-calc").html(`${profit.toFixed(2)} SPO-LP</span>`)
+		$("#sell-calc").html(`${profit.toFixed(7)} SPO-LP</span>`)
     }
 })
