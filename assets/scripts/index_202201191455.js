@@ -1432,7 +1432,7 @@ setInterval(() => {
       .balanceOf(currentAddr)
       .call()
       .then((res) => {
-        $("#user-BUSD-balance-1").text(contractUtil.parse(res).toFixed(4));
+        $("#user-BUSD-balance-1").text(contractUtil.parse(res).toFixed(7));
       });
 
     //contract.methods.getUserSpoLPBalance(currentAddr).call().then(res=>{
@@ -1459,8 +1459,8 @@ setInterval(() => {
       .getUserTokenBalance(currentAddr)
       .call()
       .then((res) => {
-        $("#user-token-balance-1").text(contractUtil.parse(res).toFixed(4));
-        $("#user-token-balance-2").text(contractUtil.parse(res).toFixed(4));
+        $("#user-token-balance-1").text(contractUtil.parse(res).toFixed(7));
+        $("#user-token-balance-2").text(contractUtil.parse(res).toFixed(7));
       });
 
     contract.methods
