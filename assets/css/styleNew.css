@@ -18,10 +18,38 @@ video {
   font-weight: bold;
 }
 
-.align-center {
-  text-align: center;
+.main-card-info {
+  /* margin-top: 100px; */
 }
 
-.main-card-info {
+.main-card-header {
+  /* margin-bottom: 30px; */
+}
+
+.mobile-space {
   margin-top: 30px;
+}
+
+@media screen and (max-width: 999px) {
+  .mobile-space {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .mobile-space {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-space {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .mobile-space {
+    margin-top: 150px;
+  }
 }
