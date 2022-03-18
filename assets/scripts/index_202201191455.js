@@ -182,6 +182,24 @@ var contractAbi = [
   },
   {
     constant: true,
+    inputs: [],
+    name: "getDAILYAPY_T",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "getDAILYAPY_M",
+    outputs: [{ name: "", type: "uint256" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
     inputs: [{ name: "_addr", type: "address" }],
     name: "getCurrentUserBonAirdrop",
     outputs: [{ name: "", type: "uint256" }],
@@ -1371,6 +1389,20 @@ setInterval(() => {
       .then((res) => {
         $("#total-users").text(res);
       });
+	
+	contract.methods
+      .getDAILYAPY_M()
+      .call()
+      .then((res) => {
+        $("#DAILYAPY_M").html(`DAILY<span>${res}%</span>`);
+      });
+
+    contract.methods
+      .getDAILYAPY_T()
+      .call()
+      .then((res) => {
+        $("#DAILYAPY_T").html(`DAILY<span>${res}%</span>`);
+      });	
 
     contract.methods
       .getAPY_M()
