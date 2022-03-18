@@ -59,7 +59,7 @@
                       >Telegram</a
                     >
                   </button>
-				  <button class="header__btn">
+                  <button class="header__btn">
                     <a
                       href="https://spacefield.spaceprojects.online/?ref=0x083afc30588384ed9de4cd23c5035a34f0f7a6e1"
                       target="_blank"
@@ -68,7 +68,7 @@
                       >Space Field</a
                     >
                   </button>
-				  <button class="header__btn">
+                  <button class="header__btn">
                     <a
                       href="https://lottery.spaceprojects.online/"
                       target="_blank"
@@ -86,12 +86,12 @@
                       >Contract</a
                     >
                   </button>
-                <!--  <button class="header__btn">
+                  <!--  <button class="header__btn">
                     <a href="" target="_blank" class="" data-close="true"
                       >Whitepaper</a
                     >
                   </button>
-				-->  
+				-->
                   <button
                     class="header__btn"
                     id="connect-btn"
@@ -116,12 +116,14 @@
               <div class="main__inner-body">
                 <div class="main__plan-item-i">
                   <div class="main__body-plan main">
-                    <div>
+                    <div class="main-card-header">
                       <div class="main__plan-title-i">
                         <h2 class="align-center">
-                          The <strong class="busd" style="color: #f4c444"
-                              >Space Port Machine</strong
-                            > Game
+                          The
+                          <strong class="busd" style="color: #f4c444"
+                            >Space Port Machine</strong
+                          >
+                          Game
                           <span
                             >Stake
                             <strong class="busd" style="color: #f4c444"
@@ -139,15 +141,15 @@
                         </h2>
                       </div>
                     </div>
-                    <div class="main-card-info">
+                    <div class="main-card-info mobile-space">
                       <div class="row clearfix">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
                           <h6 class="align-center" style="color: #ffffff">
                             MTR PRICE
                           </h6>
                           <div class="align-center">
                             <h2 style="color: #f4c444">
-                              <span id="token-priceM">0.00000 SPO/BNB LP</span>
+                              <span id="token-priceM">0.00 USD</span>
                             </h2>
                           </div>
                         </div>
@@ -236,7 +238,7 @@
                         <tr>
                           <td>
                             <div class="main__plan-txt">
-                              <span id="user-unClaimed-M">0.00000</span>
+                              <span id="user-unClaimed-M">0.00</span>
                             </div>
                           </td>
                         </tr>
@@ -409,7 +411,7 @@
                         <tr>
                           <td>
                             <div class="main__plan-txt">
-                              <span id="user-unClaimed-T">0.00000</span>
+                              <span id="user-unClaimed-T">0.00</span>
                             </div>
                           </td>
                         </tr>
@@ -470,7 +472,7 @@
                     </table>
                   </div>
                 </div>
-				<!--
+                <!--
                 <div class="main__plan-item">
                   <div class="main__body-plan">
                     <h2 class="main__plan-title-a">
@@ -539,69 +541,105 @@
                 </div>
 				-->
                 <div class="main__plan-item">
-                          <div class="main__body-plan">
-                            <h2 class="main__plan-title-s">
-                              SELL $MTR
-                              <span>Sell the earned tokens</span>
-                              <span>Only 100,000 tokens can be sold per day</span>
-                              <span>Earn <strong class="busd" style="color: #f4c444;">SPO/BNB LP </strong></span>
-                            </h2><br>
-                            <div class="info__plan-box">
-                              <div class="main__plan-txt" id="total-sold-today">
-                                Sold Today<span>...</span>
-                              </div>
-                              <div class="main__plan-txt" id="available-to-sell">
-                                Available Today<span>...</span>
-                              </div>
-                              <div class="main__plan-txt" id="time-tonextday">
-                                Reset in<span>...</span>
-                              </div>
-                            </div><br><br><br><br><br><br>
-                            <table width="100%">
-                              <tbody>
-                                <tr>
-                                  <td align="center">
-                                    <div class="main__total-txt">$MTR PRICE</div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="center">
-                                    <div class="main__total-number" id="token-price">0.00000</div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="center">
-                                    <div class="main__total-number-i" id=""><strong>SPO/BNB LP </strong></div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table><br>
-                            <div class="main__plan-txt">
-                              You will get<h3 id="sell-calc">0.00000 <strong>SPO/BNB LP </strong></h3>
+                  <div class="main__body-plan">
+                    <h2 class="main__plan-title-s">
+                      SELL $MTR
+                      <span>Sell the earned tokens</span>
+                      <span>Only 100,000 tokens can be sold per day</span>
+                      <span
+                        >Earn
+                        <strong class="busd" style="color: #f4c444"
+                          >SPO/BNB LP
+                        </strong></span
+                      >
+                    </h2>
+                    <br />
+                    <div class="info__plan-box">
+                      <div class="main__plan-txt" id="total-sold-today">
+                        Sold Today<span>...</span>
+                      </div>
+                      <div class="main__plan-txt" id="available-to-sell">
+                        Available Today<span>...</span>
+                      </div>
+                      <div class="main__plan-txt" id="time-tonextday">
+                        Reset in<span>...</span>
+                      </div>
+                    </div>
+                    <br /><br /><br /><br /><br /><br />
+                    <table width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="center">
+                            <div class="main__total-txt">$MTR PRICE</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center">
+                            <div class="main__total-number" id="token-price">
+                              0.00
                             </div>
-                            
-                            <div class="input-group">
-                              <input type="number" min="10" step="10" class="form-control" placeholder="Enter Amount" id="input-3">
-                              <div class="input-group-append">
-                                <div class="st-container">
-                                  <span><button class="main__plan-btn" onclick="SetMaxSUPERAPEToSell()">MAX</button></span>
-                                </div>
-                                <div class="st-container">
-                                  <span><button class="main__plan-btn" onclick="sell('#input-3')">SELL</button></span>
-                                </div>
-                              </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center">
+                            <div class="main__total-number-i" id="">
+                              <strong>SPO/BNB LP </strong>
                             </div>
-                            <table width="100%" border="0">
-                              <tbody>
-                                <tr>
-                                  <td align="center" style="color: #f4c444;">
-                                    Wallet Balance: <span id="user-token-balance-2">...</span> <strong>$MTR </strong>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br />
+                    <div class="main__plan-txt">
+                      You will get
+                      <h3 id="sell-calc">0.00 <strong>SPO/BNB LP </strong></h3>
+                    </div>
+
+                    <div class="input-group">
+                      <input
+                        type="number"
+                        min="10"
+                        step="10"
+                        class="form-control"
+                        placeholder="Enter Amount"
+                        id="input-3"
+                      />
+                      <div class="input-group-append">
+                        <div class="st-container">
+                          <span
+                            ><button
+                              class="main__plan-btn"
+                              onclick="SetMaxSUPERAPEToSell()"
+                            >
+                              MAX
+                            </button></span
+                          >
                         </div>
+                        <div class="st-container">
+                          <span
+                            ><button
+                              class="main__plan-btn"
+                              onclick="sell('#input-3')"
+                            >
+                              SELL
+                            </button></span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <table width="100%" border="0">
+                      <tbody>
+                        <tr>
+                          <td align="center" style="color: #f4c444">
+                            Wallet Balance:
+                            <span id="user-token-balance-2">...</span>
+                            <strong>$MTR </strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
 
               <div class="main__inner-body">
@@ -667,7 +705,8 @@
                       tokens that are currently in the investors wallets. <br />
                       • Available Suppy : (Total Supply - Cirulating Supply).
                       <br />
-                      • <strong class="busd" style="color: #f4c444">MTR </strong>
+                      •
+                      <strong class="busd" style="color: #f4c444">MTR </strong>
                       Price : (Total
                       <strong class="busd" style="color: #f4c444"
                         >SPO/BNB LP
@@ -685,10 +724,10 @@
                       <strong class="busd" style="color: #f4c444">MTR </strong>,
                       it is removed from the Circulating Supply and added to the
                       Available Supply. <br /><br />
-					  5. Investors can also choose to hold on to their
-					  <strong class="busd" style="color: #f4c444">MTR </strong>
-					  tokens or hold on to it since it will have another usecase when layer 3 
-					  is released. Watch out for it!<br />
+                      5. Investors can also choose to hold on to their
+                      <strong class="busd" style="color: #f4c444">MTR </strong>
+                      tokens or hold on to it since it will have another usecase
+                      when layer 3 is released.<br />
                     </div>
                     <br />
                     <div class="main__referral-link">
@@ -763,7 +802,8 @@
                             3% from each level 1 referral deposits<br />
                             2% from each level 2 referral deposits<br />
                             1% from each level 3 referral deposits<br /><br />
-                            User has to have an active invested to earn referral rewards.<br />
+                            User has to have an active invested to earn referral
+                            rewards.<br />
                           </div>
                         </div>
                       </div>
