@@ -1,4 +1,4 @@
-var CONTRACT_ADDRESS = "0xB139aCE032b5c2169662791e605021F613e9B2f2";
+var CONTRACT_ADDRESS = "0xd237bF72fEAE427DAe32a3bDB30CbEC9F7bF2836";
 var tokenAddr = "0xe0e92035077c39594793e61802a350347c320cf2"; // test busd/bnb LP
 //var tokenAddr = '0x434cB47c13D472da45aF9e9ff4FfB5b9D1B2F814'; // mainnet SPO/BNB LP
 var referrer = "0x2f0ead34aBDD8375382AD56B8da4b14d94AD9B66";
@@ -31,704 +31,1362 @@ var contractUtil = {
 };
 
 var contractAbi = [
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserTimeToUnstake",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "userAddress", type: "address" }],
-    name: "getUserDownlineCount",
-    outputs: [
-      { name: "", type: "uint256" },
-      { name: "", type: "uint256" },
-      { name: "", type: "uint256" },
-    ],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "name",
-    outputs: [{ name: "", type: "string" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "spender", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    name: "approve",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "totalSupply",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "SET_ENABLE_AIRDROP",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "tokenAmount", type: "uint256" }],
-    name: "sellToken",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "sender", type: "address" },
-      { name: "recipient", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    name: "transferFrom",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "limitSupply",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "totalTokenStaked",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "decimals",
-    outputs: [{ name: "", type: "uint8" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getContractTokenBalance",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "spender", type: "address" },
-      { name: "addedValue", type: "uint256" },
-    ],
-    name: "increaseAllowance",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getAPY_T",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getAPY_M",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getDAILYAPY_T",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getDAILYAPY_M",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getCurrentUserBonAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getCurrentDay",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "userAddress", type: "address" }],
-    name: "getUserReferralTotalBonus",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "unStakeToken",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getTokenPrice",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "claimAirdropM",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserAirdropReqInv",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getTokenAvailableToSell",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "claimAirdrop",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "tokenAmount", type: "uint256" }],
-    name: "tokenToSpoLP",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getTokenSoldToday",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "userAddress", type: "address" }],
-    name: "getUserReferralWithdrawn",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "totalSpoLPStaked",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "account", type: "address" }],
-    name: "balanceOf",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "SET_SELL_LIMIT",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "SET_TOKEN_DAILYPROFIT",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserSpoLPStaked",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "availableSupply",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "TOKEN_DAILYPROFIT",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserUnclaimedTokens_M",
-    outputs: [{ name: "value", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "MIN_INVEST_AMOUNT",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "SELL_LIMIT",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "symbol",
-    outputs: [{ name: "", type: "string" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "ownerManualAirdropCheckpoint",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getTimeToNextDay",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "spender", type: "address" },
-      { name: "subtractedValue", type: "uint256" },
-    ],
-    name: "decreaseAllowance",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "SET_SPOLP_DAILYPROFIT",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "to", type: "address" },
-      { name: "value", type: "uint256" },
-    ],
-    name: "transfer",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserTokenStaked",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserSpoLPBalance",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "sentAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "totalUsers",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserCountAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "referrer", type: "address" },
-      { name: "_amount", type: "uint256" },
-    ],
-    name: "stakeSpoLP",
-    outputs: [],
-    payable: true,
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getContractSpoLPBalance",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "SpoLPAmount", type: "uint256" }],
-    name: "SpoLPToToken",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "withdrawRef",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [
-      { name: "spender", type: "address" },
-      { name: "amount", type: "uint256" },
-      { name: "extraData", type: "bytes" },
-    ],
-    name: "approveAndCall",
-    outputs: [{ name: "", type: "bool" }],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserBonAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "ENABLE_AIRDROP",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserTimeToNextAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "tokenAmount", type: "uint256" }],
-    name: "stakeToken",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getContractLaunchTime",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "claimToken_M",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserUnclaimedTokens_T",
-    outputs: [{ name: "value", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [
-      { name: "owner", type: "address" },
-      { name: "spender", type: "address" },
-    ],
-    name: "allowance",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "claimToken_T",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "userAddress", type: "address" }],
-    name: "getUserReferralBonus",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "SPOLP_DAILYPROFIT",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [{ name: "value", type: "uint256" }],
-    name: "SET_MIN_INVEST_AMOUNT",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [{ name: "_addr", type: "address" }],
-    name: "getUserTokenBalance",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getAvailableAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "ownerManualAirdrop",
-    outputs: [{ name: "", type: "uint256" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, name: "account", type: "address" },
-      { indexed: false, name: "txType", type: "string" },
-      { indexed: false, name: "tokenAmount", type: "uint256" },
-      { indexed: false, name: "trxAmount", type: "uint256" },
-    ],
-    name: "TokenOperation",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, name: "from", type: "address" },
-      { indexed: true, name: "to", type: "address" },
-      { indexed: false, name: "value", type: "uint256" },
-    ],
-    name: "Transfer",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, name: "owner", type: "address" },
-      { indexed: true, name: "spender", type: "address" },
-      { indexed: false, name: "value", type: "uint256" },
-    ],
-    name: "Approval",
-    type: "event",
-  },
-];
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserTimeToUnstake",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"userAddress",
+            "type":"address"
+         }
+      ],
+      "name":"getUserDownlineCount",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         },
+         {
+            "name":"",
+            "type":"uint256"
+         },
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"name",
+      "outputs":[
+         {
+            "name":"",
+            "type":"string"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"spender",
+            "type":"address"
+         },
+         {
+            "name":"amount",
+            "type":"uint256"
+         }
+      ],
+      "name":"approve",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"totalSupply",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_ENABLE_AIRDROP",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"tokenAmount",
+            "type":"uint256"
+         }
+      ],
+      "name":"sellToken",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"sender",
+            "type":"address"
+         },
+         {
+            "name":"recipient",
+            "type":"address"
+         },
+         {
+            "name":"amount",
+            "type":"uint256"
+         }
+      ],
+      "name":"transferFrom",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"limitSupply",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"totalTokenStaked",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"decimals",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint8"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getContractTokenBalance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"spender",
+            "type":"address"
+         },
+         {
+            "name":"addedValue",
+            "type":"uint256"
+         }
+      ],
+      "name":"increaseAllowance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getAPY_T",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getAPY_M",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getCurrentUserBonAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getCurrentDay",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"userAddress",
+            "type":"address"
+         }
+      ],
+      "name":"getUserReferralTotalBonus",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"unStakeToken",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getTokenPrice",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"claimAirdropM",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserAirdropReqInv",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getTokenAvailableToSell",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"claimAirdrop",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getDAILYAPY_M",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"tokenAmount",
+            "type":"uint256"
+         }
+      ],
+      "name":"tokenToSpoLP",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getTokenSoldToday",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"userAddress",
+            "type":"address"
+         }
+      ],
+      "name":"getUserReferralWithdrawn",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"totalSpoLPStaked",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"account",
+            "type":"address"
+         }
+      ],
+      "name":"balanceOf",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_SELL_LIMIT",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_TOKEN_DAILYPROFIT",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserSpoLPStaked",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"availableSupply",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"TOKEN_DAILYPROFIT",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserUnclaimedTokens_M",
+      "outputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_DEV_FEE2",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"MIN_INVEST_AMOUNT",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"SELL_LIMIT",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"symbol",
+      "outputs":[
+         {
+            "name":"",
+            "type":"string"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_START_TIME",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"ownerManualAirdropCheckpoint",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getTimeToNextDay",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"spender",
+            "type":"address"
+         },
+         {
+            "name":"subtractedValue",
+            "type":"uint256"
+         }
+      ],
+      "name":"decreaseAllowance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_SPOLP_DAILYPROFIT",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"to",
+            "type":"address"
+         },
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"transfer",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserTokenStaked",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_DEV_FEE",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserSpoLPBalance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"sentAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"totalUsers",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserCountAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"referrer",
+            "type":"address"
+         },
+         {
+            "name":"_amount",
+            "type":"uint256"
+         }
+      ],
+      "name":"stakeSpoLP",
+      "outputs":[
+         
+      ],
+      "payable":true,
+      "stateMutability":"payable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getContractSpoLPBalance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"SpoLPAmount",
+            "type":"uint256"
+         }
+      ],
+      "name":"SpoLPToToken",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"withdrawRef",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"spender",
+            "type":"address"
+         },
+         {
+            "name":"amount",
+            "type":"uint256"
+         },
+         {
+            "name":"extraData",
+            "type":"bytes"
+         }
+      ],
+      "name":"approveAndCall",
+      "outputs":[
+         {
+            "name":"",
+            "type":"bool"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserBonAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"ENABLE_AIRDROP",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserTimeToNextAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"tokenAmount",
+            "type":"uint256"
+         }
+      ],
+      "name":"stakeToken",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getContractLaunchTime",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"claimToken_M",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserUnclaimedTokens_T",
+      "outputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"owner",
+            "type":"address"
+         },
+         {
+            "name":"spender",
+            "type":"address"
+         }
+      ],
+      "name":"allowance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         
+      ],
+      "name":"claimToken_T",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getDAILYAPY_T",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"userAddress",
+            "type":"address"
+         }
+      ],
+      "name":"getUserReferralBonus",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"SPOLP_DAILYPROFIT",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"SET_MIN_INVEST_AMOUNT",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"_addr",
+            "type":"address"
+         }
+      ],
+      "name":"getUserTokenBalance",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"getAvailableAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"ownerManualAirdrop",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"constructor"
+   },
+   {
+      "anonymous":false,
+      "inputs":[
+         {
+            "indexed":true,
+            "name":"account",
+            "type":"address"
+         },
+         {
+            "indexed":false,
+            "name":"txType",
+            "type":"string"
+         },
+         {
+            "indexed":false,
+            "name":"tokenAmount",
+            "type":"uint256"
+         },
+         {
+            "indexed":false,
+            "name":"trxAmount",
+            "type":"uint256"
+         }
+      ],
+      "name":"TokenOperation",
+      "type":"event"
+   },
+   {
+      "anonymous":false,
+      "inputs":[
+         {
+            "indexed":true,
+            "name":"from",
+            "type":"address"
+         },
+         {
+            "indexed":true,
+            "name":"to",
+            "type":"address"
+         },
+         {
+            "indexed":false,
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"Transfer",
+      "type":"event"
+   },
+   {
+      "anonymous":false,
+      "inputs":[
+         {
+            "indexed":true,
+            "name":"owner",
+            "type":"address"
+         },
+         {
+            "indexed":true,
+            "name":"spender",
+            "type":"address"
+         },
+         {
+            "indexed":false,
+            "name":"value",
+            "type":"uint256"
+         }
+      ],
+      "name":"Approval",
+      "type":"event"
+   }
+]
 
 var tokenAbi = [
   {
