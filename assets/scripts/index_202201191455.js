@@ -6,8 +6,8 @@ var upline = "0x2f0ead34aBDD8375382AD56B8da4b14d94AD9B66";
 
 var uiConfig = {
   accurateDecimals: 7,
-  shortDecimals: 4,
-  totalsDecimals: 2,
+  shortDecimals: 7,
+  totalsDecimals: 7,
   contractDivisor: 1e18,
 };
 
