@@ -2052,14 +2052,14 @@ setInterval(() => {
       .getDAILYAPY_M()
       .call()
       .then((res) => {
-        $("#DAILYAPY_M").html(`DAILY<span>${res}%</span>`);
+        $("#DAILYAPY_M").html(`Daily<span>${res}%</span>`);
       });
 
     contract.methods
       .getDAILYAPY_T()
       .call()
       .then((res) => {
-        $("#DAILYAPY_T").html(`DAILY<span>${res}%</span>`);
+        $("#DAILYAPY_T").html(`Daily<span>${res}%</span>`);
       });	
 
     contract.methods
