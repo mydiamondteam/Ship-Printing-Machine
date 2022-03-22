@@ -1978,7 +1978,7 @@ async function checkForBinanceChain() {
 
 async function runAPP() {
   let networkID = await web3.eth.net.getId();
-  if (networkID == 97) {
+  if (networkID == 56) {
     // 56 - BSC Live. 97 -- BSC Test
     contract = await new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS);
     console.log(contract);
