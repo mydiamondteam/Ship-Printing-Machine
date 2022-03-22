@@ -1,5 +1,5 @@
 //var CONTRACT_ADDRESS = "0x4408Aa1041427BD409C76885C969186A0A767D3A"; //testnet
-var CONTRACT_ADDRESS = "0x2FFE5B0c7aB3022Fa1421f0E702aB36c06Bd7EDA"; //mainnet test
+var CONTRACT_ADDRESS = "0xa19d8E92db448ff00AC763fFeC83b50F39f47e21"; //mainnet
 //var tokenAddr = "0xe0e92035077c39594793e61802a350347c320cf2"; // test busd/bnb LP
 var tokenAddr = '0x434cB47c13D472da45aF9e9ff4FfB5b9D1B2F814'; // mainnet SPO/BNB LP
 var referrer = "0x2f0ead34aBDD8375382AD56B8da4b14d94AD9B66";
@@ -166,6 +166,22 @@ var contractAbi = [
       "type":"function"
    },
    {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"DEV_FEE2",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
       "constant":false,
       "inputs":[
          {
@@ -190,6 +206,22 @@ var contractAbi = [
       ],
       "payable":false,
       "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"ADMIN",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
       "type":"function"
    },
    {
@@ -349,6 +381,22 @@ var contractAbi = [
    {
       "constant":true,
       "inputs":[
+         
+      ],
+      "name":"DEV_FEE",
+      "outputs":[
+         {
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
          {
             "name":"userAddress",
             "type":"address"
@@ -427,22 +475,6 @@ var contractAbi = [
       "type":"function"
    },
    {
-      "constant":true,
-      "inputs":[
-         
-      ],
-      "name":"getTokenAvailableToSell",
-      "outputs":[
-         {
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "payable":false,
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
       "constant":false,
       "inputs":[
          
@@ -488,6 +520,22 @@ var contractAbi = [
       ],
       "payable":false,
       "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"value",
+            "type":"address"
+         }
+      ],
+      "name":"CHANGE_ADMIN",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
       "type":"function"
    },
    {
@@ -544,6 +592,22 @@ var contractAbi = [
    {
       "constant":true,
       "inputs":[
+         
+      ],
+      "name":"DEV_1",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
          {
             "name":"account",
             "type":"address"
@@ -568,7 +632,7 @@ var contractAbi = [
             "type":"uint256"
          }
       ],
-      "name":"SET_SELL_LIMIT",
+      "name":"SET_TOKEN_DAILYPROFIT",
       "outputs":[
          
       ],
@@ -577,19 +641,19 @@ var contractAbi = [
       "type":"function"
    },
    {
-      "constant":false,
+      "constant":true,
       "inputs":[
+         
+      ],
+      "name":"startTime",
+      "outputs":[
          {
-            "name":"value",
+            "name":"",
             "type":"uint256"
          }
       ],
-      "name":"SET_TOKEN_DAILYPROFIT",
-      "outputs":[
-         
-      ],
       "payable":false,
-      "stateMutability":"nonpayable",
+      "stateMutability":"view",
       "type":"function"
    },
    {
@@ -665,6 +729,19 @@ var contractAbi = [
    {
       "constant":false,
       "inputs":[
+         
+      ],
+      "name":"getContractLpTokens",
+      "outputs":[
+         
+      ],
+      "payable":false,
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "constant":false,
+      "inputs":[
          {
             "name":"value",
             "type":"uint256"
@@ -676,38 +753,6 @@ var contractAbi = [
       ],
       "payable":false,
       "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "constant":true,
-      "inputs":[
-         
-      ],
-      "name":"MIN_INVEST_AMOUNT",
-      "outputs":[
-         {
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "payable":false,
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "constant":true,
-      "inputs":[
-         
-      ],
-      "name":"SELL_LIMIT",
-      "outputs":[
-         {
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "payable":false,
-      "stateMutability":"view",
       "type":"function"
    },
    {
@@ -839,6 +884,22 @@ var contractAbi = [
    {
       "constant":true,
       "inputs":[
+         
+      ],
+      "name":"DEV_5",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
          {
             "name":"_addr",
             "type":"address"
@@ -900,6 +961,22 @@ var contractAbi = [
          {
             "name":"",
             "type":"uint256"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"DEV_3",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
          }
       ],
       "payable":false,
@@ -1242,19 +1319,35 @@ var contractAbi = [
       "type":"function"
    },
    {
-      "constant":false,
+      "constant":true,
       "inputs":[
-         {
-            "name":"value",
-            "type":"uint256"
-         }
-      ],
-      "name":"SET_MIN_INVEST_AMOUNT",
-      "outputs":[
          
       ],
+      "name":"DEV_2",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
+         }
+      ],
       "payable":false,
-      "stateMutability":"nonpayable",
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         
+      ],
+      "name":"DEV_4",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "payable":false,
+      "stateMutability":"view",
       "type":"function"
    },
    {
@@ -2232,19 +2325,6 @@ setInterval(() => {
       .then((res) => {
         $("#total-sold-today").html(
           `Sold Today<span>${contractUtil.parseFormat(res, "accurate")}</span>`
-        );
-      });
-
-    // put this back in as it was removed from the contract
-    contract.methods
-      .getTokenAvailableToSell()
-      .call()
-      .then((res) => {
-        $("#available-to-sell").html(
-          `Available Today<span>${contractUtil.parseFormat(
-            res,
-            "accurate"
-          )}</span>`
         );
       });
 
