@@ -2146,14 +2146,14 @@ setInterval(() => {
       .getDAILYAPY_M()
       .call()
       .then((res) => {
-        $("#DAILYAPY_M").html(`Daily<span>${res}%</span>`);
+        $("#DAILYAPY_M").html(`Daily<span>${res / 10}%</span>`);
       });
 
     contract.methods
       .getDAILYAPY_T()
       .call()
       .then((res) => {
-        $("#DAILYAPY_T").html(`Daily<span>${res}%</span>`);
+        $("#DAILYAPY_T").html(`Daily<span>${res / 10}%</span>`);
       });	
 
     contract.methods
